@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 800px;
+            height: 30px;
+            background: #ccc;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            list-style: none;
+            line-height: 30px
+        }
+    </style>
+</head>
+<body>
+
+    <div class="animated rubberBand">动画效果</div>
+ 
+    <ul>
+        <li>新闻</li>
+        <li>首页</li>
+        <li>导航</li>
+        <li>分类</li>
+        <li>地图</li>
+        <li>联系我们</li>
+    </ul>
+
+    <script src="./jquery-1.12.4.min.js"></script>
+
+    <script>
+        $("ul").on("mouseenter","li",function(){
+            $(this).addClass("animated fadeInLeft")
+        })
+        $("ul").on("mouseleave","li",function(){
+            setTimeout(() => {
+                $(this).removeClass("fadeInLeft")
+            }, 1000);
+        })
+    </script>
+</body>
+</html>
